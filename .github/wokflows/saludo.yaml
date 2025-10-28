@@ -1,0 +1,25 @@
+name: Saludo al usuario
+
+# 4. Se dispara con cada push a main
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  # 5. Un único job
+  saludar-al-usuario:
+    # 6. Ejecutarse en Ubuntu latest
+    runs-on: ubuntu-latest
+
+    steps:
+      # 7.1 Descargar el código
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 7.2 Imprimir saludo personalizado
+      - name: Saludar al usuario
+        run: echo "¡Hola, ${{ github.actor }}! Gracias por hacer push."
+
+      # 7.3 Listar todos los archivos y carpetas
+      - name: Listar archivos del repositorio
+        run: ls -la
