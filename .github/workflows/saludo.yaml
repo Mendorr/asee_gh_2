@@ -3,7 +3,7 @@ name: Saludo al usuario
 # 4. Se dispara con cada push a main
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   # 5. Un único job
